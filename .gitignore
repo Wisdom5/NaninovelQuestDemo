@@ -188,3 +188,9 @@ sysinfo.txt
 *.tgz
 
 # End of https://www.toptal.com/developers/gitignore/api/firebase,unity,git,rider
+
+#Naninovel
+# Auto-generated Unity assets of transient nature.
+/Assets/NaninovelData/Transient*
+# Transient artifacts of the external tools.
+/Assets/NaninovelData/.nani/Transient*
