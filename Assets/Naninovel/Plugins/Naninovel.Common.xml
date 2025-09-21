@@ -1,0 +1,1286 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Naninovel.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Naninovel.Bridging.ConnectionAccepted">
+            <summary>
+            Sent by the server when client connection request is accepted.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Bridging.ConnectionAccepted.ServerName">
+            <summary>
+            Name of the server that accepted the connection.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Bridging.GotoRequest">
+            <summary>
+            Asks server to navigate script playback to the specified spot.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Bridging.GotoRequest.PlaybackSpot">
+            <summary>
+            The script playback spot to play.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Bridging.IMessage">
+            <summary>
+            A bridging service message.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Bridging.IClientMessage">
+            <summary>
+            A client message to server.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Bridging.IServerMessage">
+            <summary>
+            A server message to client.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Bridging.PlaybackSpot">
+            <summary>
+            Represents a navigation spot inside a scenario script.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Bridging.PlaybackSpot.ScriptName">
+            <summary>
+            Identifier of the scenario script.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Bridging.PlaybackSpot.LineIndex">
+            <summary>
+            Zero-based index of the script line.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Bridging.PlaybackSpot.InlineIndex">
+            <summary>
+            Zero-based index of an item inside the line.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Bridging.PlaybackStatus">
+            <summary>
+            Represents a script playback status.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Bridging.PlaybackStatus.Playing">
+            <summary>
+            Whether a script is being played.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Bridging.PlaybackStatus.PlayedSpot">
+            <summary>
+            Current script playback spot, if any.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Bridging.UpdateMetadata">
+            <summary>
+            Sent by the server when project metadata is changed.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Bridging.UpdateMetadata.Metadata">
+            <summary>
+            The actual project metadata.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Bridging.UpdatePlaybackStatus">
+            <summary>
+            Sent by the server when script playback status is updated.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Bridging.UpdatePlaybackStatus.PlaybackStatus">
+            <summary>
+            The actual script playback status.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Error">
+            <summary>
+            Exception thrown from Naninovel internal behaviour.
+            </summary>
+        </member>
+        <member name="T:Naninovel.ManagedText.InlineManagedTextParser">
+            <summary>
+            Allows creating <see cref="T:Naninovel.ManagedText.ManagedTextDocument"/> from serialized text in inline format.
+            </summary>
+            <remarks>
+            Inline format spec:
+            <code>
+            ; comment (optional, content after semicolon is trimmed)
+            key: value (single space after colon is required and is not part of the value)
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Naninovel.ManagedText.InlineManagedTextParser.Parse(System.String)">
+            <summary>
+            Creates document from specified serialized text string.
+            </summary>
+        </member>
+        <member name="T:Naninovel.ManagedText.InlineManagedTextSerializer">
+            <summary>
+            Allows serializing <see cref="T:Naninovel.ManagedText.ManagedTextDocument"/> to text string in inline format.
+            </summary>
+        </member>
+        <member name="M:Naninovel.ManagedText.InlineManagedTextSerializer.#ctor(System.Int32)">
+            <param name="spacing">Line breaks between records.</param>
+        </member>
+        <member name="M:Naninovel.ManagedText.InlineManagedTextSerializer.Serialize(Naninovel.ManagedText.ManagedTextDocument)">
+            <summary>
+            Serializes specified document into text string.
+            </summary>
+        </member>
+        <member name="T:Naninovel.ManagedText.ManagedTextDetector">
+            <summary>
+            Allows checking whether provided serialized managed text document string
+            is in multiline or inline format.
+            </summary>
+        </member>
+        <member name="T:Naninovel.ManagedText.ManagedTextDocument">
+            <summary>
+            An immutable collection of <see cref="T:Naninovel.ManagedText.ManagedTextRecord"/> with unique keys.
+            </summary>
+        </member>
+        <member name="P:Naninovel.ManagedText.ManagedTextDocument.Header">
+            <summary>
+            Optional remarks/description associated with the document or empty.
+            </summary>
+        </member>
+        <member name="P:Naninovel.ManagedText.ManagedTextDocument.Records">
+            <summary>
+            Records contained by the document or empty.
+            </summary>
+        </member>
+        <member name="T:Naninovel.ManagedText.ManagedTextRecord">
+            <summary>
+            A key-value pair with an optional comment contained in <see cref="T:Naninovel.ManagedText.ManagedTextDocument"/>.
+            </summary>
+            <remarks>
+            Hashed (identified) by <see cref="F:Naninovel.ManagedText.ManagedTextRecord.Key"/> only.
+            </remarks>
+        </member>
+        <member name="F:Naninovel.ManagedText.ManagedTextRecord.Key">
+            <summary>
+            Unique (inside document) identifier of the record.
+            </summary>
+        </member>
+        <member name="F:Naninovel.ManagedText.ManagedTextRecord.Value">
+            <summary>
+            Value of the record or empty.
+            </summary>
+        </member>
+        <member name="F:Naninovel.ManagedText.ManagedTextRecord.Comment">
+            <summary>
+            Optional remark associated with the record or empty.
+            </summary>
+        </member>
+        <member name="T:Naninovel.ManagedText.MultilineManagedTextParser">
+            <summary>
+            Allows creating <see cref="T:Naninovel.ManagedText.ManagedTextDocument"/> from serialized text in multiline format.
+            </summary>
+            <remarks>
+            Multiline format spec:
+            <code>
+            # key (space around key is ignored)
+            ; comment (optional, space around comment is ignored)
+            value (all lines until next key are joined, space is preserved)
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Naninovel.ManagedText.MultilineManagedTextParser.Parse(System.String)">
+            <summary>
+            Creates document from specified serialized text string.
+            </summary>
+        </member>
+        <member name="T:Naninovel.ManagedText.MultilineManagedTextSerializer">
+            <summary>
+            Allows serializing <see cref="T:Naninovel.ManagedText.ManagedTextDocument"/> to text string in multiline format.
+            </summary>
+        </member>
+        <member name="M:Naninovel.ManagedText.MultilineManagedTextSerializer.#ctor(System.Int32)">
+            <param name="spacing">Line breaks between records.</param>
+        </member>
+        <member name="M:Naninovel.ManagedText.MultilineManagedTextSerializer.Serialize(Naninovel.ManagedText.ManagedTextDocument)">
+            <summary>
+            Serializes specified document into text string.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.Constants">
+            <summary>
+            Pre-defined constants of any Naninovel project.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.Constants.CharacterType">
+            <summary>
+            Default type of the character actors.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.Constants.BackgroundType">
+            <summary>
+            Default type of the background actors.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.Constants.ScriptsType">
+            <summary>
+            Default type of the scenario scripts.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.Constants.WildcardType">
+            <summary>
+            Flag representing any type.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.Endpoint">
+            <summary>
+            Represents navigation position inside scenario script.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Endpoint.Script">
+            <summary>
+            Name of the script; when null represents current script.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Endpoint.Label">
+            <summary>
+            Label inside script; when null represents start of the script.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.EndpointResolver">
+            <summary>
+            Allows resolving <see cref="T:Naninovel.Metadata.Endpoint"/> from parsed commands.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Metadata.EndpointResolver.BuildEndpointExpression(System.String)">
+            <summary>
+            Builds constant expression for label component of endpoint parameter.
+            </summary>
+            <param name="paramId">ID of the parameter the expression is built for.</param>
+            <remarks>
+            Endpoints are expected to be named parameters where name component is script
+            name and value is the label. The expression will first attempt to get script name
+            from the parameter and fallback to currently edited script when it's not specified.
+            </remarks>
+        </member>
+        <member name="M:Naninovel.Metadata.EndpointResolver.TryResolve(Naninovel.Parsing.Command,Naninovel.Metadata.Endpoint@)">
+            <summary>
+            When specified command has a parameter with navigation context (script name and/or label),
+            returns true and assigns related out arguments; returns false otherwise.
+            </summary>
+            <param name="command">Command to extract the endpoint from.</param>
+            <param name="endpoint">When found, assigns the endpoint; default otherwise.</param>
+            <returns>Whether script name and/or label were found in one of the command parameters.</returns>
+        </member>
+        <member name="M:Naninovel.Metadata.EndpointResolver.TryResolve(Naninovel.Parsing.Parameter,System.String,Naninovel.Metadata.Endpoint@)">
+            <summary>
+            When specified parameter has navigation context (script name and/or label),
+            returns true and assigns related out arguments; returns false otherwise.
+            </summary>
+            <param name="parameter">Parameter to extract the endpoint from.</param>
+            <param name="commandAliasOrId">Identifier or alias of the command which the parameter is associated with.</param>
+            <param name="endpoint">When found, assigns the endpoint; default otherwise.</param>
+            <returns>Whether script name and/or label were found in one of the command parameters.</returns>
+        </member>
+        <member name="T:Naninovel.Metadata.MetadataProvider">
+            <summary>
+            Provides efficient lookup over Naninovel project metadata.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Metadata.MetadataProvider.Update(Naninovel.Metadata.Project)">
+            <summary>
+            Replaces the current metadata.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Metadata.MetadataProvider.FindCommand(System.String)">
+            <summary>
+            Attempts to find a command, which has either specified ID or alias.
+            Returns null when such command is not found.
+            </summary>
+            <param name="aliasOrId">Alias or ID of the command.</param>
+        </member>
+        <member name="M:Naninovel.Metadata.MetadataProvider.FindParameter(System.String,System.String)">
+            <summary>
+            Attempts to find a parameter of a command, which has either specified ID or alias.
+            Returns null when such parameter or command are not found.
+            </summary>
+            <param name="commandAliasOrId">Alias or ID of the parameter's command.</param>
+            <param name="paramAliasOrId">Alias or ID of the parameter; use empty or null for nameless.</param>
+        </member>
+        <member name="T:Naninovel.Metadata.Actor">
+            <summary>
+            Represents an entity manipulated via scenario scripts.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Actor.Id">
+            <summary>
+            Unique (project-wide) identifier of the actor.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Actor.Type">
+            <summary>
+            Type of the actor: character, background, text printer, etc.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Actor.Appearances">
+            <summary>
+            Collection of appearance identifiers supported by the actor.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Actor.Description">
+            <summary>
+            Additional human-readable information about the actor.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.Command">
+            <summary>
+            Represents an action specified in scenario scripts.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Command.Id">
+            <summary>
+            Unique (project-wide) identifier of the command.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Command.Alias">
+            <summary>
+            Optional short version of the identifier used to
+            reference the command in scenario scripts.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Command.Localizable">
+            <summary>
+            Whether the command can be translated.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Command.Summary">
+            <summary>
+            Human-readable description of the command.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Command.Remarks">
+            <summary>
+            Additional, less important information about the command.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Command.Examples">
+            <summary>
+            Command usage examples in scenario script.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Command.Parameters">
+            <summary>
+            List of parameters the command supports.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Command.Label">
+            <summary>
+            User-facing formatted identifier of the command.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.Constant">
+            <summary>
+            Represents a constant list of values associated with a name.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Constant.Name">
+            <summary>
+            Identifier of the constant.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Constant.Values">
+            <summary>
+            The list of available values.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.Parameter">
+            <summary>
+            Represents parameter of a script command.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.Id">
+            <summary>
+            Unique (command-wide) identifier of the parameter.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.Alias">
+            <summary>
+            Optional short version of the identifier used to reference
+            the parameter in scenario scripts.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.Nameless">
+            <summary>
+            Whether the parameter can be specified without the identifier.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.Required">
+            <summary>
+            Whether the parameter is expected to always be specified.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.Localizable">
+            <summary>
+            Whether the parameter can be translated.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.ValueContainerType">
+            <summary>
+            Type of the data container that stores value of the parameter.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.ValueType">
+            <summary>
+            Type of the parameter value.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.ValueContext">
+            <summary>
+            Optional information about the context in which the value is used.
+            </summary>
+            <remarks>
+            Multiple elements can be specified to map contexts to specific value indexes,
+            in case the parameter value is of list or named container types.
+            </remarks>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.DefaultValue">
+            <summary>
+            The value of the parameter has when it's not explicitly specified in script.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.Summary">
+            <summary>
+            Human-readable description of the parameter.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.Label">
+            <summary>
+            User-facing formatted identifier of the parameter.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Parameter.TypeLabel">
+            <summary>
+            User-facing formatted name of the parameter's type.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.Project">
+            <summary>
+            Describes a Naninovel project.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Project.Actors">
+            <summary>
+            Actors available in the project.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Project.Commands">
+            <summary>
+            Script commands available in the project.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Project.Resources">
+            <summary>
+            Resources available in the project.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Project.Constants">
+            <summary>
+            Constants available in the project.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Project.Variables">
+            <summary>
+            Custom variables available in the project.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Project.Functions">
+            <summary>
+            Expression functions available in the project.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.Resource">
+            <summary>
+            Describes a resource associated with the project.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Resource.Path">
+            <summary>
+            Unique (type-wide) identifier of the resource,
+            scoped via path structure (seperated with '/').
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.Resource.Type">
+            <summary>
+            Type of the resource: script, audio, spawned prefab, etc.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.ValueContainerType">
+            <summary>
+            Describes data container for a command parameter value.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContainerType.Single">
+            <summary>
+            A single value.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContainerType.List">
+            <summary>
+            List of single values.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContainerType.Named">
+            <summary>
+            A key-value span with a string key; seperated by a dot.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContainerType.NamedList">
+            <summary>
+            List of named values.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.ValueContext">
+            <summary>
+            Represents context of parameter value.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.ValueContext.Type">
+            <summary>
+            Type of the context.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Metadata.ValueContext.SubType">
+            <summary>
+            Optional, further specified type of the context.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.ValueContextType">
+            <summary>
+            Describes type of the parameter value context.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContextType.Expression">
+            <summary>
+            A script expression containing <see cref="P:Naninovel.Metadata.Project.Variables"/> and <see cref="P:Naninovel.Metadata.Project.Functions"/>.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContextType.Constant">
+            <summary>
+            A value from <see cref="P:Naninovel.Metadata.Project.Constants"/>; name is specified via <see cref="P:Naninovel.Metadata.ValueContext.SubType"/>.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContextType.Resource">
+            <summary>
+            A value from <see cref="P:Naninovel.Metadata.Project.Resources"/>; type is specified via <see cref="P:Naninovel.Metadata.ValueContext.SubType"/>.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContextType.Actor">
+            <summary>
+            Identifier of an actor from <see cref="P:Naninovel.Metadata.Project.Actors"/>; type is specified via <see cref="P:Naninovel.Metadata.ValueContext.SubType"/>.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContextType.Appearance">
+            <summary>
+            Actor appearance from <see cref="P:Naninovel.Metadata.Project.Actors"/>; actor ID may be specified via <see cref="P:Naninovel.Metadata.ValueContext.SubType"/>
+            or otherwise is evaluated from another value with <see cref="F:Naninovel.Metadata.ValueContextType.Actor"/> context under the same parameter.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContextType.Color">
+            <summary>
+            A color string in hex format.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueContextType.Vector">
+            <summary>
+            Fixed-length array with named components; the components (separated by comma)
+            are specified via <see cref="P:Naninovel.Metadata.ValueContext.SubType"/>, eg "x,y,z".
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.ValueType">
+            <summary>
+            Describes command parameter value type.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueType.String">
+            <summary>
+            A text string.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueType.Integer">
+            <summary>
+            An integer number.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueType.Decimal">
+            <summary>
+            A decimal number separated by a dot.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Metadata.ValueType.Boolean">
+            <summary>
+            A boolean binary value: true/false.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Metadata.ValueValidator">
+            <summary>
+            Allows checking if parameter values fit associated metadata.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Metadata.ValueValidator.Validate(System.String,Naninovel.Metadata.ValueContainerType,Naninovel.Metadata.ValueType)">
+            <summary>
+            Checks whether specified parameter value text fits specified metadata.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.Extensions">
+            <summary>
+            Extensions for lexing and parsing types.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.Extensions.GetLineType(Naninovel.Parsing.IScriptLine)">
+            <summary>
+            Resolves <see cref="T:Naninovel.Parsing.LineType"/> of the specified parsed line instance.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.ErrorCollector">
+            <summary>
+            Collects errors occured while parsing.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.IErrorHandler">
+            <summary>
+            Handles errors occured while parsing.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.IErrorHandler.HandleError(Naninovel.Parsing.ParseError)">
+            <summary>
+            Handles provided parsing error.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.IRangeAssociator">
+            <summary>
+            Handle associations between parsed line semantics
+            and script text line ranges used to represent them.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.IRangeAssociator.Associate(Naninovel.Parsing.ILineComponent,Naninovel.Parsing.InlineRange)">
+            <summary>
+            Handles association between the provided component and range.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.ITextIdentifier">
+            <summary>
+            Handles identification of text parameter values (<see cref="T:Naninovel.Parsing.IdentifiedText"/>).
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.ITextIdentifier.Identify(System.String,System.String)">
+            <summary>
+            Handles association between specified ID and plain text.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.ParseError">
+            <summary>
+            An error occured while parsing a script text line.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.ParseError.Message">
+            <summary>
+            Human-readable description of the error.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.ParseError.StartIndex">
+            <summary>
+            Character index inside the parsed text line associated with the start of the error.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.ParseError.Length">
+            <summary>
+            Character length of the parsed text line area associated with the error.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.ParseError.EndIndex">
+            <summary>
+            Character index inside the parsed text line associated with the end of the error.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.ParseHandlers">
+            <summary>
+            Optional handlers (hooks) for <see cref="T:Naninovel.Parsing.ScriptParser"/>.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.ParseHandlers.ErrorHandler">
+            <inheritdoc cref="T:Naninovel.Parsing.IErrorHandler"/>
+        </member>
+        <member name="P:Naninovel.Parsing.ParseHandlers.RangeAssociator">
+            <inheritdoc cref="T:Naninovel.Parsing.IRangeAssociator"/>
+        </member>
+        <member name="P:Naninovel.Parsing.ParseHandlers.TextIdentifier">
+            <inheritdoc cref="T:Naninovel.Parsing.ITextIdentifier"/>
+        </member>
+        <member name="T:Naninovel.Parsing.RangeMapper">
+            <summary>
+            Allows mapping <see cref="T:Naninovel.Parsing.ILineComponent"/> to associated <see cref="T:Naninovel.Parsing.InlineRange"/>.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.RangeMapper.Associate(Naninovel.Parsing.ILineComponent,Naninovel.Parsing.InlineRange)">
+            <summary>
+            Maps provided component instance to the associated range.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.RangeMapper.TryResolve(Naninovel.Parsing.ILineComponent,Naninovel.Parsing.InlineRange@)">
+            <summary>
+            Attempts to resolve a range associated with the provided component instance.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.RangeMapper.Clear">
+            <summary>
+            Discards stored data.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.TextMapper">
+            <summary>
+            Maps <see cref="P:Naninovel.Parsing.IdentifiedText.Id"/> to <see cref="P:Naninovel.Parsing.IdentifiedText.Text"/>.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.TextMapper.Map">
+            <summary>
+            Mapped text.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.InlineRange">
+            <summary>
+            Represents character range inside a script text line.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Parsing.InlineRange.Start">
+            <summary>
+            First character index of the range.
+            </summary>
+        </member>
+        <member name="F:Naninovel.Parsing.InlineRange.Length">
+            <summary>
+            Character count in the range.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.InlineRange.End">
+            <summary>
+            Last character index of the range.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.ListValueParser">
+            <summary>
+            Allows parsing list values where items are delimited by commas.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.ListValueParser.Parse(System.String)">
+            <summary>
+            Splits decoded list value into individual items.
+            </summary>
+            <param name="value">The decoded list value to split.</param>
+            <returns>List of the items; each could be null when not assigned (skipped).</returns>
+        </member>
+        <member name="T:Naninovel.Parsing.NamedValueParser">
+            <summary>
+            Allows parsing named values where name and value components are delimited by a dot.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.NamedValueParser.Parse(System.String)">
+            <summary>
+            Splits decoded named value into name and value components.
+            </summary>
+            <param name="value">The decoded named value to split.</param>
+            <returns>Name and value pair; each could be null when not assigned (skipped).</returns>
+        </member>
+        <member name="T:Naninovel.Parsing.ParsingErrors">
+            <summary>
+            Stores human-readable description of parsing errors.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.ScriptParser">
+            <summary>
+            Allows parsing naninovel script text to semantic models.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.ScriptParser.#ctor(Naninovel.Parsing.ParseHandlers)">
+            <summary>
+            Creates a new parser instance.
+            </summary>
+            <param name="handlers">Optional parse handlers (hooks).</param>
+        </member>
+        <member name="M:Naninovel.Parsing.ScriptParser.SplitText(System.String)">
+            <summary>
+            Splits provided script text into individual lines.
+            </summary>
+            <param name="scriptText">The script text to split.</param>
+        </member>
+        <member name="M:Naninovel.Parsing.ScriptParser.ParseText(System.String)">
+            <summary>
+            Parses provided script text to semantic models.
+            </summary>
+            <param name="scriptText">The script text to parse.</param>
+        </member>
+        <member name="M:Naninovel.Parsing.ScriptParser.ParseLine(System.String)">
+            <summary>
+            Parses an individual script text line to the corresponding semantic model.
+            </summary>
+            <param name="lineText">The script text line to parse.</param>
+        </member>
+        <member name="T:Naninovel.Parsing.Command">
+            <summary>
+            Represents an operation executed at script playback.
+            </summary>
+            <remarks>
+            This type represent command body, which is a part of
+            <see cref="T:Naninovel.Parsing.CommandLine"/> and <see cref="T:Naninovel.Parsing.InlinedCommand"/>.
+            </remarks>
+        </member>
+        <member name="P:Naninovel.Parsing.Command.Identifier">
+            <summary>
+            Unique identifier of the command.
+            </summary>
+            <remarks>
+            Not case-sensitive.
+            In v1 can be either alias or type name of the command implementation.
+            </remarks>
+        </member>
+        <member name="P:Naninovel.Parsing.Command.Parameters">
+            <summary>
+            Parameters of the command describing its behaviour.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.CommandLine">
+            <summary>
+            Represents a script line consisting of a single <see cref="P:Naninovel.Parsing.CommandLine.Command"/>.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.CommandLine.Command">
+            <summary>
+            The command body contained in the line.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.CommentLine">
+            <summary>
+            Represents a script line used for annotations; ignored at playback.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.CommentLine.Comment">
+            <summary>
+            The annotation text.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.Expression">
+            <summary>
+            Script expression evaluated at runtime.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.Expression.Body">
+            <summary>
+            The evaluated body of the expression.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.GenericLine">
+            <summary>
+            Represents a script line primarily used to specify printed text,
+            but can also contain commands executed in the midst of printing.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.GenericLine.Prefix">
+            <summary>
+            Optional (can be null) construct used to associated printed text with an author.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.GenericLine.Content">
+            <summary>
+            The text to print; can contain inlined commands and expressions.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.GenericPrefix">
+            <summary>
+            An optional construct of <see cref="T:Naninovel.Parsing.GenericLine"/> used
+            to associate printed text with an author.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.GenericPrefix.Author">
+            <summary>
+            Author (actor) identifier to associate with the printed text.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.GenericPrefix.Appearance">
+            <summary>
+            Optional (can be null) appearance of the author actor to apply.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.IdentifiedText">
+            <summary>
+            A plain text content with associated persistent identifier.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.IdentifiedText.Text">
+            <summary>
+            The identified text content.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.IdentifiedText.Id">
+            <summary>
+            The identifier of the text content.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.IGenericContent">
+            <summary>
+            Represents a part of <see cref="T:Naninovel.Parsing.GenericLine"/> after <see cref="T:Naninovel.Parsing.GenericPrefix"/>.
+            Can be either <see cref="T:Naninovel.Parsing.MixedValue"/> or <see cref="T:Naninovel.Parsing.InlinedCommand"/>.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.ILineComponent">
+            <summary>
+            Represents a part of a <see cref="T:Naninovel.Parsing.IScriptLine"/>.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.InlinedCommand">
+            <summary>
+            Part of <see cref="T:Naninovel.Parsing.GenericLine"/> containing a <see cref="P:Naninovel.Parsing.InlinedCommand.Command"/>
+            to be executed in the midst of printed text.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.InlinedCommand.Command">
+            <summary>
+            The inlined command body.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.IScriptLine">
+            <summary>
+            Represents a single script line.
+            Can be either <see cref="T:Naninovel.Parsing.CommentLine"/>, <see cref="T:Naninovel.Parsing.LabelLine"/>,
+            <see cref="T:Naninovel.Parsing.CommandLine"/> or <see cref="T:Naninovel.Parsing.GenericLine"/>.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.IValueComponent">
+            <summary>
+            Represents a part of a <see cref="T:Naninovel.Parsing.MixedValue"/>.
+            </summary>
+            <example>
+            Consider the following mixed value: <c>text1{expr}text2</c><br/>
+            In the mixed collection it will represented as:<br/>
+            [0] <see cref="T:Naninovel.Parsing.PlainText"/>("text1")<br/>
+            [1] <see cref="T:Naninovel.Parsing.Expression"/>("expr")<br/>
+            [2] <see cref="T:Naninovel.Parsing.PlainText"/>("text2")
+            </example>
+        </member>
+        <member name="T:Naninovel.Parsing.LabelLine">
+            <summary>
+            Represents a script line used to identify playback navigation point.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.LabelLine.Label">
+            <summary>
+            The identifier of the label.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.MixedValue">
+            <summary>
+            Represents a collection of <see cref="T:Naninovel.Parsing.IValueComponent"/>.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.MixedValue.Dynamic">
+            <summary>
+            Whether the value contains an <see cref="T:Naninovel.Parsing.Expression"/> and will be evaluated at runtime.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.Parameter">
+            <summary>
+            Parameter of a <see cref="T:Naninovel.Parsing.Command"/> used to control the behaviour.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.Parameter.Identifier">
+            <summary>
+            Unique identifier of the parameter.
+            Can be null in which case the parameter is considered nameless.
+            </summary>
+            <remarks>
+            Not case-sensitive.
+            In v1 can be either alias or name of the associated command field.
+            </remarks>
+        </member>
+        <member name="P:Naninovel.Parsing.Parameter.Value">
+            <summary>
+            Value of the parameter; can contain expressions.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.Parameter.Nameless">
+            <summary>
+            Whether the parameter doesn't have identifier specified.
+            </summary>
+            <remarks>
+            Command can have a single nameless parameter.
+            </remarks>
+        </member>
+        <member name="T:Naninovel.Parsing.PlainText">
+            <summary>
+            Represents plain text content.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.PlainText.Text">
+            <summary>
+            The underlying text content.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.TextIdentifier">
+            <summary>
+            Persistent identifier component of <see cref="T:Naninovel.Parsing.IdentifiedText"/>.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.TextIdentifier.Body">
+            <summary>
+            Value of the identifier.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.ListValueSerializer">
+            <summary>
+            Allows transforming list values parsed via
+            <see cref="T:Naninovel.Parsing.ListValueParser"/> back to semantic model.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.NamedValueSerializer">
+            <summary>
+            Allows transforming named values parsed via
+            <see cref="T:Naninovel.Parsing.NamedValueParser"/> back to semantic model.
+            </summary>
+        </member>
+        <member name="T:Naninovel.Parsing.ScriptSerializer">
+            <summary>
+            Allows transforming parsed script line semantic models back to text form.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.ScriptSerializer.Serialize(Naninovel.Parsing.IScriptLine)">
+            <summary>
+            Transforms provided script line semantic model back to text form.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.ScriptSerializer.Serialize(System.Collections.Generic.IEnumerable{Naninovel.Parsing.IScriptLine})">
+            <summary>
+            Transforms provided script line semantic models back to text form.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Parsing.ScriptSerializer.Serialize(System.Collections.Generic.IEnumerable{Naninovel.Parsing.IValueComponent},Naninovel.Parsing.SerializationContext)">
+            <summary>
+            Transforms provided mixed value semantic model back to text form.
+            </summary>
+            <param name="value">The value to transform.</param>
+            <param name="context">Context of the parsed content (eg, whether it's a parameter value or generic text).</param>
+        </member>
+        <member name="T:Naninovel.Parsing.SerializationContext">
+            <summary>
+            Context of the serialized script content.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.SerializationContext.ParameterValue">
+            <summary>
+            Whether the content is part of a command parameter value
+            and should be wrapped in quotes in case it contains whitespace.
+            </summary>
+        </member>
+        <member name="P:Naninovel.Parsing.SerializationContext.FirstGenericContent">
+            <summary>
+            Whether the content is the first element of generic line content
+            and should has first author assign (':') escaped when it's not preceded by whitespace
+            to ensure the content not later parsed as author identifier (generic line prefix).
+            </summary>
+        </member>
+        <member name="T:Naninovel.ISerializer">
+            <summary>
+            Implementations is able to de-/serialize arbitrary objects to/from strings.
+            </summary>
+        </member>
+        <member name="M:Naninovel.ISerializer.Serialize(System.Object)">
+            <summary>
+            Serializes specified object into string.
+            </summary>
+            <param name="poco">Object to serialize.</param>
+            <returns>Serialized string of the object.</returns>
+            <exception cref="T:Naninovel.SerializeError">Serialization failed.</exception>
+        </member>
+        <member name="M:Naninovel.ISerializer.Deserialize(System.String,System.Type)">
+            <summary>
+            Deserializes specified string into original object.
+            </summary>
+            <param name="serialized">Serialized string of the original object.</param>
+            <param name="type">Type of the original object.</param>
+            <returns>Deserialized original object.</returns>
+            <exception cref="T:Naninovel.SerializeError">Deserialization failed.</exception>
+        </member>
+        <member name="T:Naninovel.SerializeError">
+            <summary>
+            Exception thrown from Naninovel internal behaviour when serialization fails.
+            </summary>
+        </member>
+        <member name="T:Naninovel.SerializerExtensions">
+            <summary>
+            Extension methods for <see cref="T:Naninovel.ISerializer"/>.
+            </summary>
+        </member>
+        <member name="M:Naninovel.SerializerExtensions.Deserialize``1(Naninovel.ISerializer,System.String)">
+            <summary>
+            Deserializes specified serialized object string into original object.
+            </summary>
+            <param name="serialized">Serialized object string to deserialize.</param>
+            <typeparam name="T">Type of the original object to deserialize.</typeparam>
+            <returns>Deserialized object.</returns>
+            <exception cref="T:Naninovel.SerializeError">Deserialization failed or produced an incompatible type.</exception>
+        </member>
+        <member name="M:Naninovel.SerializerExtensions.TrySerialize(Naninovel.ISerializer,System.Object,System.String@)">
+            <summary>
+            Attempts to serialize specified object into string.
+            </summary>
+            <param name="poco">Objects to serialize.</param>
+            <param name="serialized">Serialized string of the object or null when serialization failed.</param>
+            <returns>Whether serialization was successful.</returns>
+        </member>
+        <member name="M:Naninovel.SerializerExtensions.TryDeserialize``1(Naninovel.ISerializer,System.String,``0@)">
+            <summary>
+            Attempts to deserialize specified serialized object string into original object.
+            </summary>
+            <param name="serialized">Serialized object string to deserialize.</param>
+            <param name="poco">Deserialized object or default when deserialization fails.</param>
+            <typeparam name="T">Type of the original object to deserialize.</typeparam>
+            <returns>Whether deserialization was successful.</returns>
+        </member>
+        <member name="T:Naninovel.Utilities.TextUtilities">
+            <summary>
+            Common text-related helpers and extensions.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.SplitLines(System.String,System.StringSplitOptions)">
+            <summary>
+            Splits the string with line break symbol as separator.
+            Will split by any type of line break, independent of OS.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.IterateLines(System.String)">
+            <summary>
+            Returns iterator over the lines in the string.
+            Will detect any type of line breaks, independent of OS.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.IterateLinesIndexed(System.String)">
+            <summary>
+            Returns indexed iterator over the lines in the string.
+            Will detect any type of line breaks, independent of OS.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.TrimJunk(System.String)">
+            <summary>
+            Trims BOM, zero-width and other junk not removed with normal <see cref="M:System.String.Trim"/>.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.EndsWithOrdinal(System.String,System.String)">
+            <summary>
+            Performs <see cref="M:System.String.EndsWith(System.String,System.StringComparison)"/> with <see cref="F:System.StringComparison.Ordinal"/>.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.StartsWithOrdinal(System.String,System.String)">
+            <summary>
+            Performs <see cref="M:System.String.StartsWith(System.String,System.StringComparison)"/> with <see cref="F:System.StringComparison.Ordinal"/>.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.GetBefore(System.String,System.String,System.StringComparison)">
+            <summary>
+            Attempts to extract content before the specified match (on first occurence); returns empty when not found.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.GetBeforeLast(System.String,System.String,System.StringComparison)">
+            <summary>
+            Attempts to extract content before the specified match (on last occurence); returns empty when not found.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.GetAfter(System.String,System.String,System.StringComparison)">
+            <summary>
+            Attempts to extract content after the specified match (on last occurence); returns empty when not found.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.GetAfterFirst(System.String,System.String,System.StringComparison)">
+            <summary>
+            Attempts to extract content after the specified match (on first occurence); returns empty when not found.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.FirstToLower(System.String)">
+            <summary>
+            Changes first character in the specified string to lower invariant.
+            </summary>
+        </member>
+        <member name="M:Naninovel.Utilities.TextUtilities.FirstToUpper(System.String)">
+            <summary>
+            Changes first character in the specified string to upper invariant.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute">
+            <summary>
+            Suppresses reporting of a specific rule violation, allowing multiple suppressions on a
+            single code artifact.
+            </summary>
+            <remarks>
+            <see cref="T:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute"/> is different than
+            <see cref="T:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute"/> in that it doesn't have a
+            <see cref="T:System.Diagnostics.ConditionalAttribute"/>. So it is always preserved in the compiled assembly.
+            </remarks>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute"/>
+            class, specifying the category of the tool and the identifier for an analysis rule.
+            </summary>
+            <param name="category">The category for the attribute.</param>
+            <param name="checkId">The identifier of the analysis rule the attribute applies to.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Category">
+            <summary>
+            Gets the category identifying the classification of the attribute.
+            </summary>
+            <remarks>
+            The <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Category"/> property describes the tool or tool analysis category
+            for which a message suppression attribute applies.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.CheckId">
+            <summary>
+            Gets the identifier of the analysis tool rule to be suppressed.
+            </summary>
+            <remarks>
+            Concatenated together, the <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Category"/> and <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.CheckId"/>
+            properties form a unique check identifier.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Scope">
+            <summary>
+            Gets or sets the scope of the code that is relevant for the attribute.
+            </summary>
+            <remarks>
+            The Scope property is an optional argument that specifies the metadata scope for which
+            the attribute is relevant.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Target">
+            <summary>
+            Gets or sets a fully qualified path that represents the target of the attribute.
+            </summary>
+            <remarks>
+            The <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Target"/> property is an optional argument identifying the analysis target
+            of the attribute. An example value is "System.IO.Stream.ctor():System.Void".
+            Because it is fully qualified, it can be long, particularly for targets such as parameters.
+            The analysis tool user interface should be capable of automatically formatting the parameter.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.MessageId">
+            <summary>
+            Gets or sets an optional argument expanding on exclusion criteria.
+            </summary>
+            <remarks>
+            The <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.MessageId"/> property is an optional argument that specifies additional
+            exclusion where the literal metadata target is not sufficiently precise. For example,
+            the <see cref="T:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute"/> cannot be applied within a method,
+            and it may be desirable to suppress a violation against a statement in the method that will
+            give a rule violation, but not against all statements in the method.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Justification">
+            <summary>
+            Gets or sets the justification for suppressing the code analysis message.
+            </summary>
+        </member>
+    </members>
+</doc>
