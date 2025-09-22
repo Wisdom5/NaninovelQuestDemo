@@ -164,3 +164,20 @@ MonoBehaviour:
       guid: 2f1b53b918fb13247a556852e3ae72a7
   - Id: Backgrounds/1252f038-1f2c-4105-8849-b62f002abc11
     Resources: []
+  - Id: Backgrounds/ba397c11-d203-4002-9c6b-d9a7143a3a07
+    Resources:
+    - name: control_room_0
+      pathPrefix: Backgrounds/SpaceShip
+      guid: 874aafa1d07ebc94980349a79d75bddb
+    - name: corridor_0
+      pathPrefix: Backgrounds/SpaceShip
+      guid: 04046a6d9796fd54c9dfbe30428aec5f
+    - name: corridor_1
+      pathPrefix: Backgrounds/SpaceShip
+      guid: 27de781ccb5de7f4f94b5bd9948b41a1
+    - name: room_0
+      pathPrefix: Backgrounds/SpaceShip
+      guid: 189600d73692c354aae0cea5dc631b59
+    - name: warehouse_0
+      pathPrefix: Backgrounds/SpaceShip
+      guid: 02b908d09d7155e4abc06e17c850152c
