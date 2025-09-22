@@ -149,3 +149,16 @@ MonoBehaviour:
     - name: NewScript
       pathPrefix: Scripts
       guid: 5aac7a9261ad40446b182ddf56634dbe
+  - Id: CharacterAvatars
+    Resources:
+    - name: Kohaku/Default
+      pathPrefix: CharacterAvatars
+      guid: 3462aeb4b261d5a4aa95d9553083d1cb
+  - Id: Characters/bf494d03-cb95-4641-834d-271ddf8bce15
+    Resources:
+    - name: Kohaku/Angry
+      pathPrefix: Characters/Kohaku
+      guid: 2f1b53b918fb13247a556852e3ae72a7
+    - name: Kohaku/Normal
+      pathPrefix: Characters/Kohaku
+      guid: 3462aeb4b261d5a4aa95d9553083d1cb
