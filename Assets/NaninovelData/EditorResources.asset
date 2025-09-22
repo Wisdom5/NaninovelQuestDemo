@@ -156,9 +156,11 @@ MonoBehaviour:
       guid: 3462aeb4b261d5a4aa95d9553083d1cb
   - Id: Characters/bf494d03-cb95-4641-834d-271ddf8bce15
     Resources:
-    - name: Kohaku/Angry
-      pathPrefix: Characters/Kohaku
-      guid: 2f1b53b918fb13247a556852e3ae72a7
-    - name: Kohaku/Normal
+    - name: Default
       pathPrefix: Characters/Kohaku
       guid: 3462aeb4b261d5a4aa95d9553083d1cb
+    - name: Angry
+      pathPrefix: Characters/Kohaku
+      guid: 2f1b53b918fb13247a556852e3ae72a7
+  - Id: Backgrounds/1252f038-1f2c-4105-8849-b62f002abc11
+    Resources: []

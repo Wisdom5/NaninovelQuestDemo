@@ -1,3 +1,4 @@
+@back room_0 id:SpaceShip
 @input name summary:"Choose your name."
 @stop
 @print "Hello, {name}"

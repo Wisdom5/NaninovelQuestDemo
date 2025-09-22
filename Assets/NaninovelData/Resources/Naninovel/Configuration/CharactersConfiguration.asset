@@ -109,9 +109,9 @@ MonoBehaviour:
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
       Poses:
-      - name: Angry
+      - name: Default
         actorState:
-          appearance: Angry
+          appearance: Default
           visible: 0
           position: {x: 0, y: 0, z: 0}
           rotation: {x: 0, y: 0, z: 0, w: 0}
@@ -121,9 +121,10 @@ MonoBehaviour:
         overriddenProperties:
         - position
         - scale
-      - name: Normal
+        - appearance
+      - name: Angry
         actorState:
-          appearance: Normal
+          appearance: Angry
           visible: 0
           position: {x: 0, y: 0, z: 0}
           rotation: {x: 0, y: 0, z: 0, w: 0}
