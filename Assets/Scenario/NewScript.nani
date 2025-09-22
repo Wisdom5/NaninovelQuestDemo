@@ -1,0 +1,3 @@
+@input name summary:"Choose your name."
+@stop
+@print "Hello, {name}"
