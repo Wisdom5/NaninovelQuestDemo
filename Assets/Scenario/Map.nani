@@ -4,7 +4,7 @@
 
 
 
-@choice handler:ButtonArea button:Prefabs/Map/WarehouseButton pos:-450,0 goto:WareHouse
+@choice handler:ButtonArea button:Prefabs/Map/WarehouseButton pos:-450,0 goto:Warehouse
 @choice handler:ButtonArea button:Prefabs/Map/RoomButton pos:0,0 goto:Room
 @choice handler:ButtonArea button:Prefabs/Map/ControlRoomButton pos:450,0 goto:ControlRoom
 

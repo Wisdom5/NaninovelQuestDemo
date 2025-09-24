@@ -1,2 +1,7 @@
+@hideAll time:0
+@back warehouse_0 id:SpaceShip
+
 "Warehouse"
+
+@char Chinatsu pos:50,0
 @stop

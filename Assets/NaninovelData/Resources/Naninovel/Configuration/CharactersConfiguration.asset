@@ -66,6 +66,7 @@ MonoBehaviour:
   Metadata:
     ids:
     - Kohaku
+    - Chinatsu
     metas:
     - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -119,12 +120,11 @@ MonoBehaviour:
           tintColor: {r: 0, g: 0, b: 0, a: 0}
           lookDirection: 0
         overriddenProperties:
-        - position
         - scale
         - appearance
-      - name: Angry
+      - name: Angrytalk
         actorState:
-          appearance: Angry
+          appearance: Angrytalk
           visible: 0
           position: {x: 0, y: 0, z: 0}
           rotation: {x: 0, y: 0, z: 0, w: 0}
@@ -132,9 +132,74 @@ MonoBehaviour:
           tintColor: {r: 0, g: 0, b: 0, a: 0}
           lookDirection: 0
         overriddenProperties:
-        - position
         - scale
         - appearance
+    - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      Loader:
+        PathPrefix: Characters
+        ProviderTypes:
+        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      guid: 05da3c04-f52f-41ad-9e8b-2095d7e6e0b2
+      customData:
+        rid: -2
+      Pivot: {x: 0.5, y: 0}
+      PixelsPerUnit: 100
+      EnableDepthPass: 1
+      DepthAlphaCutoff: 0.5
+      CustomTextureShader: {fileID: 0}
+      CustomSpriteShader: {fileID: 0}
+      RenderTexture: {fileID: 0}
+      RenderRectangle:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+      BakedLookDirection: 1
+      DisplayName: 
+      UseCharacterColor: 0
+      NameColor: {r: 1, g: 1, b: 1, a: 1}
+      MessageColor: {r: 1, g: 1, b: 1, a: 1}
+      HighlightWhenSpeaking: 0
+      HighlightCharacterCount: 0
+      SpeakingPose: 
+      NotSpeakingPose: 
+      PlaceOnTop: 1
+      HighlightDuration: 0.35
+      HighlightEasing: 1
+      MessageSound: 
+      MessageSoundPlayback: 0
+      VoiceSource: {fileID: 0}
+      LinkedPrinter: 
+      Poses:
+      - name: Default
+        actorState:
+          appearance: Default
+          visible: 0
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0, w: 0}
+          scale: {x: 1, y: 1, z: 1}
+          tintColor: {r: 0, g: 0, b: 0, a: 0}
+          lookDirection: 0
+        overriddenProperties:
+        - appearance
+        - scale
+      - name: Angrytalk
+        actorState:
+          appearance: Angrytalk
+          visible: 0
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0, w: 0}
+          scale: {x: 1, y: 1, z: 1}
+          tintColor: {r: 0, g: 0, b: 0, a: 0}
+          lookDirection: 0
+        overriddenProperties:
+        - appearance
+        - scale
   AvatarLoader:
     PathPrefix: CharacterAvatars
     ProviderTypes:
