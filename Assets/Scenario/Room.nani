@@ -1,0 +1,41 @@
+#Awakening
+@back room_0 id:SpaceShip
+
+"You wake up with a throbbing headache. Yesterday's events are a blur..."
+
+@char Kohaku pos:50,0
+Kohaku: "Hey, are you feeling okay? You took quite a hit yesterday."
+Kohaku: "By the way, do you remember your name?"
+
+@input playerName summary:"Enter your name:"
+@stop
+"You remember that your name is {playerName}."
+
+@char Kohaku pos:50,0
+Kohaku: "It's good to have you back, {playerName}. We have a lot to discuss."
+Kohaku: "Actually, we could use your help. There's another crewmate at the storage bay who needs assistance."
+Kohaku: "It's nothing complicated — just sorting supplies. Maybe working will help you clear your head."
+
+@choice "Sure, I’ll help out." goto:.Agree
+@choice "Supplies? That doesn’t sound fun..." goto:.Lazy
+@stop
+
+#Agree
+@set helpedStorage=true
+@goto .AfterChoice
+
+#Lazy
+@set helpedStorage=false
+@goto .AfterChoice
+
+#AfterChoice
+@if helpedStorage
+Kohaku "Great, I knew I could count on you!"
+@else
+Kohaku "Ah, don’t be lazy, {playerName}, come on. Let’s get this done."
+"You kind of regret not agreeing immediately."
+@endif
+
+@goto Map
+@stop
+; --- после этого можно вставить сцену с картой ---

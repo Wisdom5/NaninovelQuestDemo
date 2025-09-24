@@ -146,9 +146,18 @@ MonoBehaviour:
       guid: 735d6aa767879aa469134858c5b2f0a7
   - Id: Scripts
     Resources:
-    - name: NewScript
+    - name: Room
       pathPrefix: Scripts
-      guid: 5aac7a9261ad40446b182ddf56634dbe
+      guid: 34bf26fee4ea32d48bac5857e137e42a
+    - name: Map
+      pathPrefix: Scripts
+      guid: 4c9ceb45cf6ee704ea917dc324df489c
+    - name: Warehouse
+      pathPrefix: Scripts
+      guid: 6d72ec52a5ed96648b033698820ae7bb
+    - name: ControlRoom
+      pathPrefix: Scripts
+      guid: 88a3998acdc9c8741a150d456078815e
   - Id: CharacterAvatars
     Resources:
     - name: Kohaku/Default
@@ -158,26 +167,49 @@ MonoBehaviour:
     Resources:
     - name: Default
       pathPrefix: Characters/Kohaku
-      guid: 3462aeb4b261d5a4aa95d9553083d1cb
+      guid: 856d14187ef94dd4a810e0e7cd99f61b
     - name: Angry
       pathPrefix: Characters/Kohaku
-      guid: 2f1b53b918fb13247a556852e3ae72a7
+      guid: 16df33a873187b940ad1075f2ef522ae
   - Id: Backgrounds/1252f038-1f2c-4105-8849-b62f002abc11
     Resources: []
   - Id: Backgrounds/ba397c11-d203-4002-9c6b-d9a7143a3a07
     Resources:
     - name: control_room_0
       pathPrefix: Backgrounds/SpaceShip
-      guid: 874aafa1d07ebc94980349a79d75bddb
+      guid: e5092d1b21e189245902aa88253f4fce
     - name: corridor_0
       pathPrefix: Backgrounds/SpaceShip
-      guid: 04046a6d9796fd54c9dfbe30428aec5f
+      guid: 5df65b70a4419784aba877abc6aaccf0
     - name: corridor_1
       pathPrefix: Backgrounds/SpaceShip
-      guid: 27de781ccb5de7f4f94b5bd9948b41a1
+      guid: 3adf6ca550440854aac206a0b637dd36
     - name: room_0
       pathPrefix: Backgrounds/SpaceShip
-      guid: 189600d73692c354aae0cea5dc631b59
+      guid: 6cb5dd3e50641c34c918d80017d80c2e
     - name: warehouse_0
       pathPrefix: Backgrounds/SpaceShip
-      guid: 02b908d09d7155e4abc06e17c850152c
+      guid: 19b12daf8efd05143bf2e1ce0067ef6a
+  - Id: Backgrounds/150923e8-3a39-43f3-9c36-ba4c9355c543
+    Resources:
+    - name: bg1
+      pathPrefix: Backgrounds/UI
+      guid: f7cc00a4bfc4abf4eaa57393773a4797
+    - name: bg2
+      pathPrefix: Backgrounds/UI
+      guid: 28413ae1a97be034eb8813b75282585f
+    - name: bg3
+      pathPrefix: Backgrounds/UI
+      guid: 4a5d168a8c1f7f04a8d3157208be5774
+    - name: bg4
+      pathPrefix: Backgrounds/UI
+      guid: 766a594eedaec8846a30a18e532ce193
+    - name: bg5
+      pathPrefix: Backgrounds/UI
+      guid: dc68765a7daf4034494c49612d6a704c
+    - name: bg6
+      pathPrefix: Backgrounds/UI
+      guid: 0706397dcddd417428712b7584f2cbd3
+    - name: bg_Scene
+      pathPrefix: Backgrounds/UI
+      guid: cc23b315f775d8541aa30042704019af
