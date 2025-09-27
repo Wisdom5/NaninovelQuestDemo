@@ -1,2 +1,16 @@
-"Control room"
+@hideAll time:0
+@back control_room_0 id:SpaceShip
+
+Control room
+
+@showUI ChipUI
+
+isChipPicked: {chipPicked}
+
+after chip spawn
+
+isChipPicked: {chipPicked}
+
+after chip spawn
+
 @stop

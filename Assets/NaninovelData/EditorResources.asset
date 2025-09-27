@@ -144,6 +144,9 @@ MonoBehaviour:
     - name: ScriptNavigatorUI
       pathPrefix: UI
       guid: 735d6aa767879aa469134858c5b2f0a7
+    - name: ChipUI
+      pathPrefix: UI
+      guid: 9e7c5badf17e30f468730f23009d1db1
   - Id: Scripts
     Resources:
     - name: Room
