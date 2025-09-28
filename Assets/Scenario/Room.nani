@@ -34,14 +34,53 @@
     @if helpedStorage
         Kohaku: Great, I knew I could count on you!
     @else
+        @char Kohaku.Angrytalk
         Kohaku: Ah, don’t be lazy, {playerName}, come on. Let’s get this done.
         You kind of regret not agreeing immediately.
     @endif
     @set awakeningCompleted=true
 
-    @else
-    ; --- Final choice ---
-    @endif
+@else
+    #FinalChipChoice
+
+    @char Kohaku pos:20,0
+    @char Chinatsu pos:80,0
+    You finally find the Mysterious Data Chip in the Control Room. Who should you give it to, or keep it for yourself?
+
+    @choice "Give the chip to Chinatsu." goto:.GiveChinatsu
+    @choice "Give the chip to Kohaku." goto:.GiveKohaku
+    @choice "Keep the chip for yourself." goto:.KeepChip
+    @stop
+
+    #GiveChinatsu
+    @set gaveChipTo="Chinatsu"
+    @char Chinatsu.Happy
+    Chinatsu: Thank you, {playerName}! I appreciate it. You’re the best!
+    @char Kohaku.Angrytalk
+    Kohaku: Hmm… really? I’m not thrilled about that.  
+    @goto .AfterChipDecision
+
+    #GiveKohaku
+    @set gaveChipTo="Kohaku"
+    @char Kohaku.Happy
+    Kohaku: Thanks, {playerName}! I knew I could count on you.
+    @char Chinatsu.Angrytalk
+    Chinatsu: Really? That’s… disappointing.  
+    @goto .AfterChipDecision
+
+    #KeepChip
+    @set gaveChipTo="None"
+    @char Kohaku.Angrytalk
+    Kohaku: {playerName}, you really are keeping it? That’s… infuriating.  
+    @char Chinatsu.Angrytalk
+    Chinatsu: Seriously? I didn’t expect that from you…  
+    @goto .AfterChipDecision
+
+
+    #AfterChipDecision
+    The end
+    @stop
+@endif
 
 
 

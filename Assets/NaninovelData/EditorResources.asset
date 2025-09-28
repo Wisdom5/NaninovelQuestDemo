@@ -183,6 +183,9 @@ MonoBehaviour:
     - name: Angrytalk
       pathPrefix: Characters/Kohaku
       guid: 16df33a873187b940ad1075f2ef522ae
+    - name: Happy
+      pathPrefix: Characters/Kohaku
+      guid: e6b0461512c3dea4e869d7b322526273
   - Id: Backgrounds/1252f038-1f2c-4105-8849-b62f002abc11
     Resources: []
   - Id: Backgrounds/ba397c11-d203-4002-9c6b-d9a7143a3a07
@@ -233,3 +236,6 @@ MonoBehaviour:
     - name: Angrytalk
       pathPrefix: Characters/Chinatsu
       guid: 4dd6878a09566ad418dc5482bbde2538
+    - name: Happy
+      pathPrefix: Characters/Chinatsu
+      guid: f1b525edb20ccd9499e49a4458977ec1
