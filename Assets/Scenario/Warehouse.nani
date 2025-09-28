@@ -1,36 +1,35 @@
 @hideAll time:0
 @back warehouse_0 id:SpaceShip
 
-@char Chinatsu pos:50,0
+@if !warehouseVisited
+    @char Chinatsu pos:50,0
 
-Chinatsu: Oh, hello! I'm so glad someone finally came to help me.
-Chinatsu: I've been trying to move these boxes all day. We need to find a Mysterious Data Chip. It's said to contain secrets about this station. 
-Chinatsu: Honestly, I wouldn't mind keeping it for myself, but I promised Kohaku I'd help her find it. Maybe you'll want to keep it too?
-Chinatsu: Alright, time to get to work before I talk my way into overtime.
+    Chinatsu: Oh, hello! I'm so glad someone finally came to help me.
+    Chinatsu: I've been trying to move these boxes all day. We need to find a Mysterious Data Chip. It's said to contain secrets about this station. 
+    Chinatsu: Honestly, I wouldn't mind keeping it for myself, but I promised Kohaku I'd help her find it. Maybe you'll want to keep it too?
+    Chinatsu: Alright, time to get to work before I talk my way into overtime.
 
+    @startCardGame
 
-; TODO
-; Here the mini-game starts
-; After the mini-game, check the result variable (e.g., $miniGameSuccess)
+    #WairForMiniGame
+    @if !cardGameCompleted
+        @wait 1
+        @goto .WairForMiniGame
+    @endif
 
-
-@set miniGameSuccess=true
-
-@if miniGameSuccess
     Chinatsu: Wow, you did great! You're really strong and sharp. I knew I could count on you!
+    Chinatsu: Even after sorting through all these boxes, I still can't find the Data Chip. Maybe it's in the Control Room. Could you go and check there for me?
+
+    Sure, I'll check the Control Room.
+    Alright, back to the map.
+
+    @set warehouseVisited=true
 @else
-    Chinatsu: Ouch, looks like you still haven't recovered from that hit to the head. Don't worry, you'll get better with practice!
+    It's so quiet here now...
+    Looks like Chinatsu is gone. Guess I’ll have to handle the rest on my own.
+    Alright, back to the map.
+    @set warehouseVisited2=true
 @endif
-
-Chinatsu: Even after sorting through all these boxes, I still can't find the Data Chip. Maybe it's in the Control Room. Could you go and check there for me?
-
-
-Sure, I'll check the Control Room.
-
-I guess this time I shouldn't argue. Last time Kohaku really scolded me for that...
-
-Alright, back to the map.
-
 
 @hidePrinter
 @goto Map

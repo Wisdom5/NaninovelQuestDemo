@@ -1,16 +1,21 @@
 @hideAll time:0
 @back control_room_0 id:SpaceShip
 
-Control room
-
 @showUI ChipUI
 
-isChipPicked: {chipPicked}
+"So this is the Control Room... Looks way less messy than I imagined."
+"Alright, let's look around. That chip has to be here somewhere."
 
-after chip spawn
+#WaitForChip
+@if !chipPicked
+    @wait 1
+    @goto .WaitForChip
+@endif
 
-isChipPicked: {chipPicked}
+"Aha, there you are! Thought you could hide from me, huh? You little rascal. :3"
+"The Mysterious Data Chip. Finally in my hands."
+"Time to head back before anyone notices it's missing."
 
-after chip spawn
-
+@hidePrinter
+@goto Map
 @stop

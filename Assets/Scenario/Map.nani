@@ -1,15 +1,46 @@
 @hideAll time:0
-
 @back bg3 id:UI
 
+@if !mapVisitedFirstTime
+    Okay, and this is a map. Let's see where is the warehouse.
+    @set mapVisitedFirstTime=true
+@endif
 
 
-@choice handler:ButtonArea button:UI/Prefabs/Map/WarehouseButton pos:-450,0 goto:Warehouse
-@choice handler:ButtonArea button:UI/Prefabs/Map/RoomButton pos:0,0 goto:Room
-@choice handler:ButtonArea button:UI/Prefabs/Map/ControlRoomButton pos:450,0 goto:ControlRoom
+@if lock
+    #Lock
+    I can't go there yet.
+@endif
 
-Okay, and this is a map. Let's see where our warehouse is.
+@if chipPicked
+    @if warehouseVisited2
+        @choice handler:ButtonArea button:UI/Prefabs/Map/RoomButton pos:0,0 goto:Room
+    @else
+        @choice handler:ButtonArea button:UI/Prefabs/Map/RoomButton pos:0,0 goto:.Lock
+    @endif
+@else
+    @choice handler:ButtonArea button:UI/Prefabs/Map/RoomButton pos:0,0 goto:.Lock
+@endif
+
+@if !chipPicked&&warehouseVisited
+    @choice handler:ButtonArea button:UI/Prefabs/Map/WarehouseButton pos:-450,0 goto:.Lock
+@else
+    @choice handler:ButtonArea button:UI/Prefabs/Map/WarehouseButton pos:-450,0 goto:Warehouse
+@endif
+
+
+
+@if !warehouseVisited
+    @choice handler:ButtonArea button:UI/Prefabs/Map/ControlRoomButton pos:450,0 goto:.Lock
+@else 
+    @if !chipPicked
+        @choice handler:ButtonArea button:UI/Prefabs/Map/ControlRoomButton pos:450,0 goto:ControlRoom
+    @else
+        @choice handler:ButtonArea button:UI/Prefabs/Map/ControlRoomButton pos:450,0 goto:.Lock
+    @endif      
+@endif
+
+
 
 @hidePrinter
-
 @stop

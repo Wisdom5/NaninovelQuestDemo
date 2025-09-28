@@ -147,6 +147,12 @@ MonoBehaviour:
     - name: ChipUI
       pathPrefix: UI
       guid: 9e7c5badf17e30f468730f23009d1db1
+    - name: CardMatchingGameCanvas
+      pathPrefix: UI
+      guid: 3e7448b28d7c8934989d4107c7933a16
+    - name: CardMatchingUI
+      pathPrefix: UI
+      guid: 1271f6214290bf147af62700338af55f
   - Id: Scripts
     Resources:
     - name: Room

@@ -15,3 +15,15 @@ MonoBehaviour:
   PredefinedVariables:
   - name: chipPicked
     value: false
+  - name: warehouseVisited
+    value: false
+  - name: awakeningCompleted
+    value: false
+  - name: lock
+    value: false
+  - name: warehouseVisited2
+    value: false
+  - name: cardGameCompleted
+    value: false
+  - name: mapVisitedFirstTime
+    value: false
