@@ -3,6 +3,7 @@ using Features.CardMatching.Scripts.Data;
 using Features.CardMatching.Scripts.Declaration;
 using Naninovel;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Features.CardMatching.Scripts.Presentation
 {
@@ -10,6 +11,10 @@ namespace Features.CardMatching.Scripts.Presentation
     {
         [SerializeField]
         private CardMatchingBoardView _boardView;
+        [SerializeField]
+        private GameObject _popupBackground;
+        [SerializeField]
+        private GameObject _popupWindow;
 
         private ICardMatchingService _cardMatchingService;
         private CardView _firstSelected;
@@ -32,7 +37,10 @@ namespace Features.CardMatching.Scripts.Presentation
 
             _cardMatchingService.StartGame(config.DefaultPairCount);
             _boardView.Init(_cardMatchingService.GetCards(), OnCardClicked);
-
+            
+            _popupBackground.SetActive(true);
+            _popupWindow.SetActive(true);
+            
             _firstSelected = null;
             _secondSelected = null;
             _isBusy = false;
@@ -102,8 +110,10 @@ namespace Features.CardMatching.Scripts.Presentation
                 _cardMatchingService.OnGameCompleted -= OnGameCompleted;
             }
 
-            // TODO: Temporary solution - just hide the object on game end. 
+            // TODO: Temporary solution
             // Replace with proper flow (results UI / Naninovel integration) later.
+            _popupBackground.gameObject.SetActive(false);
+            _popupWindow.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
 

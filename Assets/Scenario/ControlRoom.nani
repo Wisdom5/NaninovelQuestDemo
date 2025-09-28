@@ -3,8 +3,8 @@
 
 @showUI ChipUI
 
-"So this is the Control Room... Looks way less messy than I imagined."
-"Alright, let's look around. That chip has to be here somewhere."
+So this is the Control Room... Looks way less messy than I imagined.
+Alright, let's look around. That chip has to be here somewhere.
 
 #WaitForChip
 @if !chipPicked
@@ -12,9 +12,9 @@
     @goto .WaitForChip
 @endif
 
-"Aha, there you are! Thought you could hide from me, huh? You little rascal. :3"
-"The Mysterious Data Chip. Finally in my hands."
-"Time to head back before anyone notices it's missing."
+Aha, there you are! Thought you could hide from me, huh? You little rascal. :3
+The Mysterious Data Chip. Finally in my hands.
+Time to head back before anyone notices it's missing.
 
 @hidePrinter
 @goto Map

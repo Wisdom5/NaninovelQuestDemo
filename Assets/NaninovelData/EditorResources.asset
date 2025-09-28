@@ -187,7 +187,10 @@ MonoBehaviour:
       pathPrefix: Characters/Kohaku
       guid: e6b0461512c3dea4e869d7b322526273
   - Id: Backgrounds/1252f038-1f2c-4105-8849-b62f002abc11
-    Resources: []
+    Resources:
+    - name: default
+      pathPrefix: Backgrounds/MainBackground
+      guid: b41c2e3deb4471040b499744e6cfb19f
   - Id: Backgrounds/ba397c11-d203-4002-9c6b-d9a7143a3a07
     Resources:
     - name: control_room_0

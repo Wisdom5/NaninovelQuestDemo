@@ -32,9 +32,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -58,7 +58,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 9998
   m_TargetDisplay: 0
@@ -84,6 +86,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!222 &3274546455995604414
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -107,11 +110,12 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: b41c2e3deb4471040b499744e6cfb19f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -144,8 +148,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hideOnLoad: 1
+  hideInThumbnail: 0
   saveVisibilityState: 1
   blockInputWhenVisible: 1
+  adaptToInputMode: 1
   allowedSamplers:
   - Rollback
   - AutoPlay
@@ -153,6 +159,9 @@ MonoBehaviour:
   - Pause
   - Continue
   modalUI: 1
+  modalGroup: 
+  buttonControls: {fileID: 0}
+  controlsLegend: {fileID: 0}
   fontChangeConfiguration: []
   image: {fileID: 6376301862599038207}
 --- !u!225 &225354704567141220
