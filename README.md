@@ -57,12 +57,12 @@ A simple visual novel made with **Unity** and **Naninovel**, featuring an intera
 
 ## 🎥 Gameplay Showcase
 ### Dialogue
-![Dialogue] <img width="1919" height="1079" alt="ShowCase_1" src="https://github.com/user-attachments/assets/c6919345-69b5-42ec-b8fd-a4953759f757" />
+<img width="1919" height="1079" alt="ShowCase_1" src="https://github.com/user-attachments/assets/c6919345-69b5-42ec-b8fd-a4953759f757" />
 
 ### "Matching Cards" Mini-Game
-![CardGame] <img width="1919" height="1079" alt="ShowCase2" src="https://github.com/user-attachments/assets/47721c3d-a345-4525-8019-d96adb43c47e" />
+<img width="1919" height="1079" alt="ShowCase2" src="https://github.com/user-attachments/assets/47721c3d-a345-4525-8019-d96adb43c47e" />
 
 ### Map Navigation
-![MapAndQuest]<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/27339261-6b32-4a94-9fdd-4b9c661d7b7d" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/27339261-6b32-4a94-9fdd-4b9c661d7b7d" />
 
 ---
